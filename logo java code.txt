@@ -1,0 +1,448 @@
+//Make an SVG Container
+ var svgContainer = d3.select("body").append("svg:svg")
+     .attr("width", 1000)
+     .attr("height", 1000);
+
+ var radius = new Number();
+ var originx = new Number();
+ var originy = new Number();
+
+ //LOCATION OF ALL FIGURES BASED ON THESE ORIGIN POINTS
+ //SIZE OF ALL FIGURES BASED ON RADIUS
+ radius = 110;
+ originx = 150;
+ originy = 220;
+
+ var width_t = new Number();
+ width_t = .121 * radius;
+
+ var circle = svgContainer.append("circle")
+     .attr("cx", originx)
+     .attr("cy", originy)
+     .attr("r", radius);
+
+
+ //Yellow Bars  
+ var yellow1 = svgContainer.append("rect")
+     .attr("id", "yellowtower1")
+     .attr("x", originx + (-.8475 * radius))
+     .attr("y", originy + (.4643 * radius))
+     .attr("width", width_t)
+     .attr("height", (.266 * radius))
+     .attr("fill", 'url(#yellow1)');
+
+
+ var yellow2 = svgContainer.append("rect")
+     .attr("id", "yellowtower2")
+     .attr("x", originx + (-.67976 * radius))
+     .attr("y", originy + (.2571 * radius))
+     .attr("width", width_t)
+     .attr("height", (.575 * radius))
+     .attr("fill", 'url(#yellow2)');
+
+ var yellow3 = svgContainer.append("rect")
+     .attr("id", "yellowtower3")
+     .attr("x", originx + (-.5119 * radius))
+     .attr("y", originy + (.07857 * radius))
+     .attr("width", width_t)
+     .attr("height", (.860 * radius))
+     .attr("fill", 'url(#yellow3)');
+
+ var yellow4 = svgContainer.append("rect")
+     .attr("id", "yellowtower4")
+     .attr("x", originx + (-.344 * radius))
+     .attr("y", originy + (-.1 * radius))
+     .attr("width", width_t)
+     .attr("height", (1.1 * radius))
+     .attr("fill", 'url(#yellow4)');
+
+
+ //Blue Bars  
+ var blue4 = svgContainer.append("rect")
+     .attr("id", "bluetower4")
+     .attr("x", originx + (.8475 * radius) - width_t)
+     .attr("y", originy + (.4643 * radius))
+     .attr("width", width_t)
+     .attr("height", (.266 * radius))
+     .attr("fill", 'url(#blue4)');
+
+
+ var blue3 = svgContainer.append("rect")
+     .attr("id", "bluetower3")
+     .attr("x", originx + (.67976 * radius) - width_t)
+     .attr("y", originy + (.2571 * radius))
+     .attr("width", width_t)
+     .attr("height", (.575 * radius))
+     .attr("fill", 'url(#blue3)');
+
+ var blue2 = svgContainer.append("rect")
+     .attr("id", "bluetower2")
+     .attr("x", originx + (.5119 * radius) - width_t)
+     .attr("y", originy + (.07857 * radius))
+     .attr("width", width_t)
+     .attr("height", (.860 * radius))
+     .attr("fill", 'url(#blue2)');
+
+ var blue1 = svgContainer.append("rect")
+     .attr("id", "bluetower1")
+     .attr("x", originx + (.344 * radius) - width_t)
+     .attr("y", originy + (-.1 * radius))
+     .attr("width", width_t)
+     .attr("height", (1.1 * radius))
+     .attr("fill", 'url(#blue1)');
+
+
+ //Middle Grey Bars 
+ //Mid tower Base
+ var greybase = svgContainer.append("rect").attr("id", "base1")
+     .attr("x", originx + (-.1655 * radius))
+     .attr("y", originy + (-.246 * radius))
+     .attr("width", (.1655 * radius * 2))
+     .attr("height", (1.28 * radius))
+     .attr("fill", 'url(#greybase)')
+     .append("base");
+
+
+ //Grey bars to "split-up" Mid tower Base
+ var line1 = svgContainer.append("line").attr("id", "bar1")
+     .attr("x1", originx + (-.0905 * radius))
+     .attr("y1", originy + (-.246 * radius))
+     .attr("x2", originx + (-.0905 * radius))
+     .attr("y2", originy + (-.246 * radius) + (1.28 * radius))
+     .attr("stroke-width", 2)
+     .attr("stroke", "black");
+
+ var line2 = svgContainer.append("line").attr("id", "bar2")
+     .attr("x1", originx + (.0905 * radius))
+     .attr("y1", originy + (-.246 * radius))
+     .attr("x2", originx + (.0905 * radius))
+     .attr("y2", originy + (-.246 * radius) + (1.28 * radius))
+     .attr("stroke-width", 2)
+     .attr("stroke", "black");
+
+ var line3 = svgContainer.append("line").attr("id", "bar3")
+     .attr("x1", originx)
+     .attr("y1", originy + (-.246 * radius))
+     .attr("x2", originx)
+     .attr("y2", originy + (-.246 * radius) + (1.28 * radius))
+     .attr("stroke-width", 2)
+     .attr("stroke", "black");
+
+ var greybox2 = svgContainer.append("rect").attr("id", "base2")
+     .attr("x", originx + (-.1298 * radius))
+     .attr("y", originy + (-.3857 * radius))
+     .attr("width", (.1298 * radius * 2))
+     .attr("height", (.125 * radius))
+     .attr("fill", 'url(#greybox)');
+
+ var greybox3 = svgContainer.append("rect").attr("id", "base3")
+     .attr("x", originx + (-.108 * radius))
+     .attr("y", originy + (-.453 * radius))
+     .attr("width", (.108 * radius * 2))
+     .attr("height", (.055 * radius))
+     .attr("fill", 'url(#greybox)');
+
+ var greybox4 = svgContainer.append("rect").attr("id", "base4")
+     .attr("x", originx + (-.085 * radius))
+     .attr("y", originy + (-.534 * radius))
+     .attr("width", (.085 * radius * 2))
+     .attr("height", (.070 * radius))
+     .attr("fill", 'url(#greybox)');
+
+ var greybox5 = svgContainer.append("rect").attr("id", "base5")
+     .attr("x", originx + (-.0280 * radius))
+     .attr("y", originy + (-.5720 * radius))
+     .attr("width", ((.085 * radius * 2) / 3))
+     .attr("height", (.070 * radius) * (3 / 5))
+     .attr("fill", 'url(#greybox)');
+
+ //Antenna
+ var line4 = svgContainer.append("rect").attr("id", "antenna")
+     .attr("x", originx - ((.025 * 1 / 2 * radius * 2) / 3))
+     .attr("y", originy + (-.767 * radius))
+     .attr("width", ((.025 * radius * 2) / 3))
+     .attr("height", (.196 * radius))
+     .attr("fill", 'url(#antenna)');
+
+
+ //inner-white ring used to cover up parts of the bars
+ var whitering = svgContainer.append("circle")
+     .attr("cx", originx)
+     .attr("cy", originy)
+     .attr("r", radius * 1.06)
+     .attr("fill", "transparent")
+     .attr("stroke-width", radius / 8)
+     .attr("stroke", "white");
+
+
+//Cover-up white box placed below the main black circle, this is needed to hide the bars when before they are transitioned upward into position.
+var whitebox = svgContainer.append("rect")
+    .attr("x", originx - radius)
+     .attr("y", originy + radius)
+     .attr("width", (radius *2))
+     .attr("height", (radius * 1.5))
+     .attr("fill", 'white');
+
+//another white ring used to cover up some parts between the inner black circle and the white box where the towers became visible.
+var whitering = svgContainer.append("circle")
+     .attr("cx", originx)
+     .attr("cy", originy)
+     .attr("r", radius * 1.17)
+     .attr("fill", "transparent")
+     .attr("stroke-width", radius / 4)
+     .attr("stroke", "white");
+
+
+ //out-black ring
+ var blackring = svgContainer.append("circle")
+     .attr("cx", originx)
+     .attr("cy", originy)
+     .attr("r", radius * 1.08)
+     .attr("fill", "transparent")
+     .attr("stroke-width", radius / 17)
+     .attr("stroke", "black");
+
+ var text = svgContainer.append("text")
+ .attr("y", originy - radius - radius * .5)    
+     .attr("x", originx - radius * 1.15)
+     .text("NYC DATA SCIENCE")
+     .attr("font-family", "sans-serif")
+     .attr("font-size", radius * .24);
+
+
+
+ var text2 = svgContainer.append("text")
+     .attr("y", originy - radius - radius * .25)
+     .attr("x", originx - radius * .55)
+     .text("ACADEMY")
+     .style("font-weight", "bold")
+     .attr("font-family", "sans-serif")
+     .attr("font-size", radius * .24);
+
+
+//Following code creates the transition where the bars raise up
+//from the bottom of the circle, the middle tower fades in. 
+
+//Make the middle towers "invisible" by setting opacity to zero.
+d3.selectAll("#base1")
+     .style("opacity", 0);
+ d3.selectAll("#base2")
+     .style("opacity", 0);
+ d3.selectAll("#base3")
+     .style("opacity", 0);
+ d3.selectAll("#base4")
+     .style("opacity", 0);
+ d3.selectAll("#base5")
+     .style("opacity", 0);
+ d3.selectAll("#antenna")
+     .style("opacity", 0);
+ d3.selectAll("text")
+     .style("opacity", 0);
+
+
+//Setting side towers height to below the circle
+ d3.select("#bluetower4")
+     .attr("y", originy + radius);
+ d3.select("#yellowtower1")
+     .attr("y", originy + radius);
+ d3.select("#bluetower3")
+     .attr("y", originy + radius);
+ d3.selectAll("#yellowtower2")
+     .attr("y", originy + radius);
+ d3.select("#bluetower2")
+     .attr("y", originy + radius);
+ d3.selectAll("#yellowtower3")
+     .attr("y", originy + radius);
+ d3.select("#bluetower1")
+     .attr("y", originy + radius);
+ d3.selectAll("#yellowtower4")
+     .attr("y", originy + radius);
+
+
+
+//Transitions to raise the side bars up to the correct height for each.
+
+//Outer towers raise first
+ d3.select("#bluetower4").transition()    
+     .duration(1000)
+     .attr("y", originy + (.4643 * radius))
+     .ease("linear");
+
+ d3.selectAll("#yellowtower1").transition()
+     .duration(1000)
+     .attr("y", originy + (.4643 * radius))
+     .ease("linear");
+
+//second set of towers
+ d3.select("#bluetower3").transition()
+     .delay(500)
+     .duration(1000)
+     .attr("y", originy + (.2571 * radius))
+  .ease("linear");
+
+ d3.selectAll("#yellowtower2").transition()
+     .delay(500)
+      .duration(1000)
+     .attr("y", originy + (.2571 * radius))
+  .ease("linear");
+
+//third set of towers
+ d3.select("#bluetower2").transition()
+     .delay(800)
+     .duration(1000)
+     .attr("y", originy + (.07857 * radius))
+  .ease("linear");
+
+ d3.selectAll("#yellowtower3").transition()
+     .delay(800)
+     .duration(1000)
+     .attr("y", originy + (.07857 * radius))
+ .ease("linear");
+
+//inner-most towers
+ d3.select("#bluetower1").transition()
+     .delay(1000)
+     .duration(1000)
+     .attr("y", originy + (-.1 * radius))
+     .ease("linear");
+
+ d3.selectAll("#yellowtower4").transition()
+     .delay(1000)
+     .duration(1000)
+     .attr("y", originy + (-.1 * radius))
+     .ease("linear");
+
+ 
+ //Fade-in middle tower starting with the base
+ d3.selectAll("#base1").transition()
+     .delay(2000)
+     .duration(2000)
+     .style("opacity", 100);
+     
+ d3.selectAll("#base2").transition()
+     .delay(2300)
+     .duration(2000)
+     .style("opacity", 100);
+
+ d3.selectAll("#base3").transition()
+     .delay(2600)
+     .duration(2000)
+     .style("opacity", 100);
+ d3.selectAll("#base4").transition()
+    .delay(2800)
+    .duration(2000)
+     .style("opacity", 100);
+ d3.selectAll("#base5").transition()
+     .delay(3000)
+     .duration(2000)
+     .style("opacity", 100);
+ d3.selectAll("#antenna").transition()
+     .delay(3200)
+     .duration(2000)
+     .style("opacity", 100);
+
+//Fade in text of "NYC Data Science Academy"
+ d3.selectAll("text").transition()
+     .delay(3800)
+     .duration(2000)
+     .style("opacity", 100);
+
+
+
+//The following commented out section is an alternate
+//logo transition.  It inovlves the logo appearing in all at once
+//from the black circle which uses opacity change/
+
+ //d3.selectAll("circle").transition()
+ //.duration(750)
+ //.style("opacity", .50);
+
+// d3.selectAll("circle")
+// .style("opacity", 0);
+
+// d3.selectAll("rect")
+//     .style("opacity", 0);
+
+// d3.selectAll("line")
+//     .style("opacity", 0);
+
+// d3.selectAll("text")
+//     .style("opacity", 0);
+
+
+// d3.selectAll("circle").transition()
+ //    .duration(500)
+//     .style("opacity", 100);
+// d3.selectAll("line").transition()
+//     .duration(2200)
+//     .style("opacity", 100);
+
+// d3.select("#bluetower4").transition()
+//     .delay(900)
+//     .duration(2000)
+//     .style("opacity", 100);
+
+// d3.selectAll("#yellowtower1").transition()
+//     .delay(900)
+//     .duration(2000)
+//     .style("opacity", 100);
+
+// d3.select("#bluetower3").transition()
+//     .delay(1800)
+//     .duration(2000)
+//     .style("opacity", 100);
+
+// d3.selectAll("#yellowtower2").transition()
+//     .delay(1800)
+//     .duration(2000)
+//     .style("opacity", 100);
+
+// d3.select("#bluetower2").transition()
+//     .delay(2600)
+//     .duration(2000)
+//     .style("opacity", 100);
+
+// d3.selectAll("#yellowtower3").transition()
+//     .delay(2600)
+//     .duration(2000)
+//     .style("opacity", 100);
+
+// d3.select("#bluetower1").transition()
+//     .delay(3400)
+//     .duration(2000)
+//     .style("opacity", 100);
+
+// d3.selectAll("#yellowtower4").transition()
+//     .delay(3400)
+//     .duration(2000)
+//     .style("opacity", 100);
+
+// d3.selectAll("#base1").transition()
+//     .delay(4200)
+//     .duration(2000)
+//     .style("opacity", 100);
+// d3.selectAll("#base2").transition()
+//     .delay(4800)
+//     .duration(2000)
+//     .style("opacity", 100);
+// d3.selectAll("#base3").transition()
+//     .delay(5100)
+//     .duration(2000)
+//     .style("opacity", 100);
+// d3.selectAll("#base4").transition()
+ //    .delay(5400)
+//     .duration(2000)
+//     .style("opacity", 100);
+// d3.selectAll("#base5").transition()
+//     .delay(5400)
+//     .duration(2000)
+//     .style("opacity", 100);
+// d3.selectAll("#antenna").transition()
+//     .delay(5800)
+//     .duration(2000)
+//     .style("opacity", 100);
+
+// d3.selectAll("text").transition()
+//     .delay(6000)
+//     .duration(2000)
+//     .style("opacity", 100);
